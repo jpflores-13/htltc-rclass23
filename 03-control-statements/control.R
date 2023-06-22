@@ -1,0 +1,2 @@
+library(htltcR)
+vignette("control")
