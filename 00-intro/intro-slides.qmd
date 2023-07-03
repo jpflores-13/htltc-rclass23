@@ -6,8 +6,28 @@ format: revealjs
 
 ## Your Instructors
 
--   
+- JP Flores (he/him)
+Lab of Doug Phanstiel
+Rising 3rd year 
+Bash, R
+Most excited for Back to December (Taylor's Version) 
 
-## Introductions!
+- Marielle Bond (she/her)
+Lab of Doug Phanstiel
+Rising 4th year
+Bash, R
+Most excited for Sparks Fly (Taylor's Version)
 
--   test
+- Micah Hysong (he/him)
+Lab of Laura Raffield
+Rising 2nd year 
+Bash, R, Python
+Association Studies: TWAS, MWAS, PheWAS
+"Girl idk her new album"
+
+## Housekeeping
+- Slack
+
+## Accommodations
+- Anonymous Google Form
+
