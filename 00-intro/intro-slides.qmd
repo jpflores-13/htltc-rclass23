@@ -27,6 +27,7 @@ Association Studies: TWAS, MWAS, PheWAS
 
 ## Housekeeping
 - Slack
+- Days, Time, Room
 
 ## Accommodations
 - Anonymous Google Form
