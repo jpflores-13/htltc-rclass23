@@ -1,11 +1,14 @@
 ---
 title: "Operators"
-format:
-  revealjs: 
-    theme: dark
-    toc: true
+format: 
+  revealjs:
+    theme: "default"
+    scrollable: true
+    chalkboard: true
+    slide-number: true
     code-fold: true
-date: "`r Sys.Date()`"
+    toc: true
+date: today
 code-line-numbers: true
 ---
 
@@ -13,12 +16,6 @@ code-line-numbers: true
 #| include: false
 knitr::opts_chunk$set(echo = TRUE, collapse = TRUE)
 ```
-
-## Using this document
-
-- \# indicates a comment, and anything after a comment will not be evaluated in R
-
-- Read through the document after class. This is meant to be a reference, and ideally, you should be able to understand every line of code. If there is something you do not understand please Slack or email us with questions. You can also ask in the following class (you're probably not the only one with the same question!). 
 
 ## Learning Goals
 
@@ -29,12 +26,11 @@ knitr::opts_chunk$set(echo = TRUE, collapse = TRUE)
 5.  Predict results using the basic comparison operators (`>`, `<`, `==`, `>=`, `<=`)
 6.  Predict the data classes and how they change when comparing or combining objects
 
-### Introduction to R
+## Introduction to R
 
 The most basic introduction to R is through simple math calculations. For example:
 
 ```{r}
-#|
 3 + 4
 ```
 

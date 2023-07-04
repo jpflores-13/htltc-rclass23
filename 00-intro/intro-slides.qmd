@@ -81,3 +81,14 @@ format:
 ::::
 
 :::::
+
+## Posit Cloud Workspace
+![](assets/posit-icon-fullcolor.svg){.absolute height="100px" right=300 bottom=595}
+![](assets/rstudio-figure.png){.absolute height="600px"}
+
+
+
+
+
+
+
