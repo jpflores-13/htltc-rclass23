@@ -1,0 +1,275 @@
+---
+title: "HTLTC-R: Tidyverse"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{HTLTC-R: Tidyverse}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, collapse = TRUE)
+set.seed(1234)
+```
+
+### Using this document
+* Code blocks and R code have a grey background (note, code nested in the text is not highlighted in the pdf version of this document but is a different font).
+* \# indicates a comment, and anything after a comment will not be evaluated in R
+* The comments beginning with \#\# under the code in the grey code boxes are the output from the code directly above; any comments added by us will start with a single \#
+* While you can copy and paste code into R, you will learn faster if you type out the commands yourself. 
+* Read through the document after class. This is meant to be a reference, and ideally, you should be able to understand every line of code. If there is something you do not understand please email us with questions or ask in the following class (you're probably not the only one with the same question!). 
+
+### Goals
+1. Understand basic `dplyr` functions
+2. Understand piping in tidyverse (from `magrittr` package)
+3. Understand structuring data for `ggplot2`
+
+### Tidyverse
+Tidyverse is a collection of packages in R for data science. The packages are designed to work well with each other and make working with and plotting data easier. It comes installed by default in many R deployments. 
+
+If working on a an R session that does not have tidyverse installed, we can install it with:
+
+```{r, eval=FALSE}
+install.packages('tidyverse')
+```
+
+After which we can load the library.
+
+```{r, warning=FALSE, message=FALSE}
+library(tidyverse)
+```
+
+This gives us access to all functions in the tidyverse package collection. We will look first at functions from the package `dplyr`.
+
+### dplyr
+This package is where most of the data manipulation functionality of tidyverse lives. To take a look at some of these functions we will use this dataset which is fitting a DNase concentrations curve to optical density. 
+
+```{r}
+data("DNase")
+head(DNase)
+```
+It looks like we have three columns: 
+
+* Run - Which run of the assay
+* conc - Concentration of DNase
+* density - Optical Density at 450 nm
+
+The first function we will look at is the select function. It is used to select specific columns. We can either specify column names or indexes. For example:
+
+```{r}
+subset <- select(DNase, 'conc')
+head(subset)
+```
+
+has selected the conc column only. We can also achieve this with:
+```{r}
+subset <- select(DNase, 2)
+head(subset)
+```
+
+We can also select multiple columns:
+
+```{r}
+subset <- select(DNase, c(Run, density))
+
+#Or
+
+subset <- select(DNase, c(1,3))
+
+head(subset)
+```
+If we want to drop columns, we can use a `-` operator the column vector.
+
+```{r}
+subset <- select(DNase, -Run)
+
+#Or
+
+subset <- select(DNase, -1)
+
+head(subset)
+```
+
+The second function to look at is the filter function. It allows us to filter our rows according to some criteria. For example, we can filter them according to the value of some column. 
+
+```{r}
+subset <- filter(DNase, Run == 1)
+head(subset)
+```
+
+This can include multiple conditions.
+
+```{r}
+subset <- filter(DNase, Run == 1, conc > 0.05)
+#equivalent to:
+#subset <- filter(DNase, Run == 1 & conc > 0.05)
+
+head(subset)
+
+```
+Next we will look at mutate. It enables mutation of a column using any valid operation. For instance, we could multiply the concentrations by 2 and then store them in a new column called `dbl_conc`.
+
+```{r}
+new_data <- mutate(DNase, dbl_conc = conc * 2)
+head(new_data)
+```
+
+We can also add columns together, chain operations, and reference created frames immediately in the same `mutate` function call! 
+
+```{r}
+new_data <- mutate(DNase, dbl_conc = conc * 2, triple_conc = dbl_conc + conc)
+head(new_data)
+```
+
+***
+
+#### In class exercise
+
+1. Filter `DNase` for concentrations below 0.1 and store in a new object.
+2. Filter `DNase` for concentrations above 0.1 or Run equals 2 and store in a new object.
+3. Drop the columns for concentration and density and store in a new object.
+4. Create a new column that is half the density named `true_density` and then drop the old `density` column and store the result in the object `true_data`. (How would you chain those functions?)
+
+***
+
+### The pipe operator
+
+As you may have seen from the previous exercise, chaining two functions takes some effort (and creates long and difficult to read lines (likes(this()))).
+
+The elegant alternative is using the pipe or `%>%` operator. This operator takes the output of one function and passes it as a first argument to the next function.
+
+A keyboard shortcut for `%>%` is Ctrl + Shift + M (Windows) or Cmd + Shift + M (Mac).
+
+```{r, eval=FALSE}
+function_1(args) %>% function_2(output_of_function_1, args) %>% function_3(output_of_function_2, args)
+```
+
+The synergy between `dplyr` and this pipe operator is that almost all `dplyr` functions accept the data to manipulate as the first argument, which allows for very easy piping between those functions.
+
+
+```{r}
+true_data <- 
+  DNase %>% 
+  mutate(true_density = 2*density) %>% 
+  select(-density)
+
+head(true_data)
+```
+
+***
+
+#### In class exercise
+
+1. Select the Run and density columns from DNase and then mutate the Run column to add 1 to all values. 
+Hint: You can use this syntax
+```{r, eval=FALSE}
+mutate(data, column_1 = sum(column_1))
+```
+to mutate a column in-place, meaning to modify it without creating a new column. 
+
+2. Filter for concentrations above 0.2, drop the Run column, and then divide the density by half. 
+
+***
+
+### More dplyr operations
+
+Now that piping makes chaining functions easy, we can look at the two `dplyr` functions that are very useful when used in sequence. 
+
+The first is `group_by()` which allows for grouping the rows by values in a specific column (or multiple columns!), while `summarize()` summarizes the rows along these groupings.   
+
+For example, what if I wanted to know the average concentration per Run? I would have to group the data on the Run column, and then summarize the concentration column using a `mean()` function.
+
+```{r}
+data_avg <- 
+  DNase %>% 
+  group_by(Run) %>% 
+  summarize(avg_density = mean(density)) %>% 
+  ungroup()
+
+head(data_avg)
+```
+
+It is good practice to use the function `ungroup()` after grouping your data frame as this can create unexpected behavior when other `group()` functions are applied to the data frame. 
+
+Let's get the median and the standard deviation for density.
+
+```{r}
+data_avg <- 
+  DNase %>% 
+  group_by(Run) %>% 
+  summarise(med_density = median(density), sd_density = sd(density)) %>% 
+  ungroup()
+
+head(data_avg)
+```
+ 
+One concept here is that it is possible to group by multiple columns. For instance, every run has two density values for the concentrations. These are most likely technical replicates that I want to average before doing any statistics. To do this, I can group by the Run and then the concentration, and then summarise the density.
+
+```{r}
+data_tech_avg <-
+  DNase %>% 
+  group_by(Run, conc) %>% 
+  summarise(avg_density = mean(density))
+
+data_tech_avg
+```
+
+We can create our own functions to mutate and summarise. `dplyr` will pass the column for each group separately as a vector (and will pass the entire column if there are no groups) to the function. A custom mutate function needs to return a vector the same length it was passed, and a custom summarise function needs to return a single element.
+
+```{r, eval=FALSE}
+custom_mutate_function <- function(vector_from_dplyr){
+  new_vector <- do_something_with(vector_from_dplyr)
+  # new_vector must be the same length as vector_from_dplyr
+  return(new_vector)
+}
+
+new_data <-
+  data %>% 
+  mutate(new_column = custom_mutate_function(old_column))
+
+custom_mutate_function <- function(vector_from_dplyr){
+  result <- do_something_with(vector_from_dplyr)
+  # result must be a single element (a vector of length 1)
+  return(result)
+}
+
+new_data <-
+  data %>% 
+  summarise(new_column = custom_summarise_function(old_column))
+```
+
+Let's for example, create a function that doubles a column and then adds 1
+
+```{r}
+math_func <- function(vec){
+  new_vec <- vec*2 + 1
+  return(new_vec)
+}
+
+new_data <-
+  DNase %>% 
+  mutate(new_density = math_func(density))
+
+head(new_data)
+```
+
+### Exercises
+
+1. We want to plot the mean of the density at each run. First step is to calculate that mean using `dplyr`.
+2. Using this new dataframe, use `ggplot` to plot a scatter line plot for density vs run. 
+3. We want to log transform the density on this scatter plot. Calculate the log density from the current density and then calculate the mean long density for each run.
+4. Create a custom mutate function that takes a vector and returns another vector by replacing values below the mean by "low" and values above the mean as "high". For example
+
+```{r, eval=FALSE}
+old_vector <- c(1,2,3,4,5, 6)
+
+# your custom_mutate function here
+
+custom_mutate(old_vector) 
+
+print(old_vector)
+
+## [1] "low" "low" "low" "high" "high" "high"
+```
+
+5. Mutate the log density column with this custom function to create a new column: `type` and then plot line scatter plot of Run vs log density, colored by type. 
