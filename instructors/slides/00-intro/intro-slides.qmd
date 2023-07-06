@@ -86,15 +86,11 @@ format:
 :::{.incremental}
 - R is derived off the language, S
 - Along with Python, dominating bioinformatics 
-- R is derived off the language, S
-- Along with Python, dominating bioinformatics 
 - Built with statistics & biomedical data analysis in mind
 - Very sophisticated graphics capabilities
 - Large & supportive community of developers
 - One of the best IDEs around (RStudio)
 :::
-
-
 
 ## R is having a R(evolution)
 ![](assets/langpop-r-python-thumb.png){.absolute width="712px" height="609px" left=200 top=75}
