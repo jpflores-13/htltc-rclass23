@@ -6,8 +6,6 @@ format:
     scrollable: true
     chalkboard: true
     slide-number: true
-    code-fold: true
-    toc: true
 date: today
 code-line-numbers: true
 ---
@@ -31,18 +29,21 @@ knitr::opts_chunk$set(echo = TRUE, collapse = TRUE)
 The most basic introduction to R is through simple math calculations. For example:
 
 ```{r}
+#| results: false
 3 + 4
 ```
 
 Similarly, R can do subtraction, multiplication, division, and exponentiation:
 
 ```{r}
+#| results: false
 4 - 2
 2*120
 1e3/2
 3^2
 ```
 
+## 
 The `<-` command is used to store variables in R. For example, if we want to store the result of `3 + 4` to use in future calculations, we could do something like the following:
 
 ```{r}

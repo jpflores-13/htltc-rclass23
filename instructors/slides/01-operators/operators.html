@@ -10,7 +10,7 @@
 <link href="operators_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.353">
 
-  <meta name="dcterms.date" content="2023-07-04">
+  <meta name="dcterms.date" content="2023-07-06">
   <title>Operators</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -398,24 +398,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2023-07-04</p>
-</section><section id="TOC">
-<nav role="doc-toc"> 
-<h2 id="toc-title">Table of contents</h2>
-<ul>
-<li><a href="#/learning-goals" id="/toc-learning-goals">Learning Goals</a></li>
-<li><a href="#/introduction-to-r" id="/toc-introduction-to-r">Introduction to R</a></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li>
-<ul>
-<li><a href="#/exercises" id="/toc-exercises">Exercises</a></li>
-</ul></li>
-</ul>
-</nav>
+  <p class="date">2023-07-06</p>
 </section>
 <section id="learning-goals" class="slide level2">
 <h2>Learning Goals</h2>
@@ -432,57 +415,37 @@
 <h2>Introduction to R</h2>
 <p>The most basic introduction to R is through simple math calculations. For example:</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="dv">3</span> <span class="sc">+</span> <span class="dv">4</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="do">## [1] 7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="dv">3</span> <span class="sc">+</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Similarly, R can do subtraction, multiplication, division, and exponentiation:</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="dv">4</span> <span class="sc">-</span> <span class="dv">2</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="do">## [1] 2</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="dv">2</span><span class="sc">*</span><span class="dv">120</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="do">## [1] 240</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="fl">1e3</span><span class="sc">/</span><span class="dv">2</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a><span class="do">## [1] 500</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a><span class="dv">3</span><span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="do">## [1] 9</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="dv">2</span><span class="sc">*</span><span class="dv">120</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="fl">1e3</span><span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="dv">3</span><span class="sc">^</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
 <p>The <code>&lt;-</code> command is used to store variables in R. For example, if we want to store the result of <code>3 + 4</code> to use in future calculations, we could do something like the following:</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="sc">+</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>Notice, code did not return any result. The result is now stored in <code>x</code>. In the example above, “x” is the name of the variable. The <code>&lt;-</code> operator told R to calculate <code>3 + 4</code> and store the results in a variable called <code>x</code>. You can now access the variable by typing it into the console:</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>x</span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="do">## [1] 7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>The <code>x</code> variable can also be used in calculations and to create new variables.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>y <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">+</span> x</span>
 <span id="cb5-2"><a href="#cb5-2"></a>y</span>
 <span id="cb5-3"><a href="#cb5-3"></a><span class="do">## [1] 9</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>It can be hard to remember which variables are available. R provides the <code>ls</code> function for displaying the variables contained in your environment. Functions have names, in this case <code>ls</code>. What happens when you run <code>ls()</code>? Note that you have to include the <code>()</code> after the function name to execute the function. If you do not include the parentheses the output shows the code behind the <code>ls</code> function.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">ls</span>()</span>
 <span id="cb6-2"><a href="#cb6-2"></a><span class="do">## [1] "has_annotations" "x"               "y"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>Running <code>ls()</code> returns <code>[1] "x" "y"</code>, indicating there are two variables, <code>x</code> and <code>y</code>, in the global environment.</p>
 </section>
@@ -499,43 +462,31 @@
 <h4 id="data-types">Data types</h4>
 <p>Programming languages include different data classes. While R includes many different types, we will discuss the three most common: (1) numeric, (2) character, and (3) logical. We can check the data class with the <code>class</code> function.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>vars <span class="ot">&lt;-</span> <span class="fu">ls</span>()</span>
 <span id="cb7-2"><a href="#cb7-2"></a><span class="fu">class</span>(<span class="at">x =</span> vars)</span>
 <span id="cb7-3"><a href="#cb7-3"></a><span class="do">## [1] "character"</span></span>
 <span id="cb7-4"><a href="#cb7-4"></a><span class="fu">class</span>(<span class="at">x =</span> x)</span>
 <span id="cb7-5"><a href="#cb7-5"></a><span class="do">## [1] "numeric"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>Notice the <code>class</code> function requires an input, in this case called “x”. Running <code>class()</code> without any input will give an error message:</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">class</span>()</span>
 <span id="cb8-2"><a href="#cb8-2"></a><span class="do">## Error in class(): 0 arguments passed to 'class' which requires 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>In some programming languages the user has to specify the data class beforehand. R makes an educated guess on the data class, which is convenient, but can cause unexpected problems if the user is not careful. Let’s explore data classes further after making some new variables.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>var1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
 <span id="cb9-2"><a href="#cb9-2"></a>var2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"1"</span>, <span class="st">"2"</span>, <span class="st">"3"</span>)</span>
 <span id="cb9-3"><a href="#cb9-3"></a>var3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>The <code>c</code> function creates a vector – or a string of values. We did not tell R what data class to make the vectors. Run <code>class</code> to see how R interpreted the vectors.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">class</span>(var1)</span>
 <span id="cb10-2"><a href="#cb10-2"></a><span class="do">## [1] "numeric"</span></span>
 <span id="cb10-3"><a href="#cb10-3"></a><span class="fu">class</span>(var2)</span>
 <span id="cb10-4"><a href="#cb10-4"></a><span class="do">## [1] "character"</span></span>
 <span id="cb10-5"><a href="#cb10-5"></a><span class="fu">class</span>(var3)</span>
 <span id="cb10-6"><a href="#cb10-6"></a><span class="do">## [1] "character"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>Even though <code>var2</code> could be interpreted as numeric, adding the quotation marks created a character vector. When combining or comparing two values/vectors R attempts to coerce one to the higher order data class. From the R documentation:</p>
 <blockquote>
@@ -556,21 +507,16 @@
 <h4 id="comparison-operators">Comparison Operators</h4>
 <p>In addition to the algebraic operators discussed at the beginning of the class, R includes the comparison operators. We will illustrate how R interprets data classes and introduce the logical class using the comparison operators. <code>&lt;</code> &amp; <code>&gt;</code> behave as you might expect:</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="dv">1</span> <span class="sc">&lt;</span> <span class="dv">2</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a><span class="do">## [1] TRUE</span></span>
 <span id="cb11-3"><a href="#cb11-3"></a><span class="dv">1</span> <span class="sc">&gt;</span> <span class="dv">2</span></span>
 <span id="cb11-4"><a href="#cb11-4"></a><span class="do">## [1] FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>Here, the comparison is simple because the values on both sides of the operator are numeric. Notice the output of the above comparisons are <code>TRUE</code> and <code>FALSE</code>. <code>TRUE</code> and <code>FALSE</code> are protected reserved terms in R, and cannot be modified.</p>
 <p><code>TRUE</code> and <code>FALSE</code> are in the “logical” data class. We will discuss more details of how they can be used in future lectures, but they simply mean “true” and “false.” So we would expect that <code>1 = 1</code> would return <code>TRUE</code>:</p>
 <p><code>{r},error=TRUE} 1 = 1</code></p>
 <p>The <code>=</code> operator is another assignment operator in R. We won’t discuss the differences between <code>&lt;-</code> and <code>=</code>, but know that you should almost always be using <code>&lt;-</code>. We see here that numbers are also protected reserved terms in R. The correct operator for comparing if two items are equal in R is <code>==</code> – similarly greater than and less than equal operators are <code>&gt;=</code> and <code>&lt;=</code>.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="dv">1</span> <span class="sc">==</span> <span class="dv">1</span></span>
 <span id="cb12-2"><a href="#cb12-2"></a><span class="do">## [1] TRUE</span></span>
 <span id="cb12-3"><a href="#cb12-3"></a><span class="dv">1</span> <span class="sc">&gt;=</span> <span class="dv">1</span></span>
@@ -579,15 +525,11 @@
 <span id="cb12-6"><a href="#cb12-6"></a><span class="do">## [1] TRUE</span></span>
 <span id="cb12-7"><a href="#cb12-7"></a><span class="st">"1"</span> <span class="sc">==</span> <span class="dv">1</span></span>
 <span id="cb12-8"><a href="#cb12-8"></a><span class="do">## [1] TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>The last expression in the code above gives an interesting result. R interpreted <code>"1"</code> as equal to <code>1</code>. We know from <code>var2</code> above that adding quotes to a number indicates a character class rather than a numeric. But we also know from the documentation quote above that when two arguments are of different class, R will coerce the arguments to the data type with the highest precedence. In the expression above the <code>1</code> on the right side of the operator was coerced to the character data class, and R told you that <code>"1"</code> in fact equals <code>"1"</code>. Similarly, if we combine <code>var1</code> and <code>var2</code> R will coerce <code>var1</code> to a character.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">class</span>(<span class="fu">c</span>(var1, var2))</span>
 <span id="cb13-2"><a href="#cb13-2"></a><span class="do">## [1] "character"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>The code above has two nested function calls. Look for the innermost parentheses and work outward. First, the expression called <code>c</code> to create a vector, made up of <code>var1</code> and <code>var2</code>. Then the resulting vector was passed to <code>class</code>. If this is confusing, come back and run the two steps separately (hint: you can store that resulting vector as a new variable, then check the data class of the new variable with <code>class</code>).</p>
 </section>
@@ -603,32 +545,24 @@
 
 <p>To make checking and manipulating data classes R provides the <code>as</code> and <code>is</code> functions. <code>is</code> will check whether the input is a specific data class and <code>as</code> will coerce the input to the given data class. Let’s use these functions to explore how <code>TRUE</code> and <code>FALSE</code> are converted to other data classes.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">is</span>(<span class="at">object =</span> <span class="cn">TRUE</span>, <span class="at">class2 =</span> <span class="st">"logical"</span>)</span>
 <span id="cb14-2"><a href="#cb14-2"></a><span class="do">## [1] TRUE</span></span>
 <span id="cb14-3"><a href="#cb14-3"></a><span class="fu">as</span>(<span class="at">object =</span> <span class="cn">TRUE</span>, <span class="at">Class =</span> <span class="st">"numeric"</span>)</span>
 <span id="cb14-4"><a href="#cb14-4"></a><span class="do">## [1] 1</span></span>
 <span id="cb14-5"><a href="#cb14-5"></a><span class="fu">as</span>(<span class="at">object =</span> <span class="cn">FALSE</span>, <span class="at">Class =</span> <span class="st">"numeric"</span>)</span>
 <span id="cb14-6"><a href="#cb14-6"></a><span class="do">## [1] 0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>Notice that functions can have more than one input (parameter), and each input is named. Inspecting the <code>class</code> function closer would show that the name of the input parameter is “x”. (If you do not give the name of the parameter R will assume the inputs were given in the order the parameters are defined for the function. Here, typing <code>is(TRUE, "logical")</code> would give the same output, but <code>is("logical", TRUE)</code> does not. However, <code>is(class2 = "logical", object = TRUE)</code> will give the same result because the parameter order does not matter if the parameters are specified.) Additionally, R provides shortcut functions for the different data classes.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">is.character</span>(<span class="cn">TRUE</span>)</span>
 <span id="cb15-2"><a href="#cb15-2"></a><span class="do">## [1] FALSE</span></span>
 <span id="cb15-3"><a href="#cb15-3"></a><span class="fu">is.logical</span>(<span class="cn">FALSE</span>)</span>
 <span id="cb15-4"><a href="#cb15-4"></a><span class="do">## [1] TRUE</span></span>
 <span id="cb15-5"><a href="#cb15-5"></a><span class="fu">as.character</span>(<span class="cn">TRUE</span>)</span>
 <span id="cb15-6"><a href="#cb15-6"></a><span class="do">## [1] "TRUE"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>Notice that coercing <code>TRUE</code> to a character and to a numeric provide different results. In numeric terms <code>TRUE</code> is <code>1</code> and <code>FALSE</code> is <code>0</code>. What about converting from a higher precedence class to a lower precedence class?</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">as.numeric</span>(<span class="st">"1"</span>)</span>
 <span id="cb16-2"><a href="#cb16-2"></a><span class="do">## [1] 1</span></span>
 <span id="cb16-3"><a href="#cb16-3"></a><span class="fu">as.numeric</span>(<span class="st">"a"</span>)</span>
@@ -645,15 +579,11 @@
 <span id="cb16-14"><a href="#cb16-14"></a><span class="do">## [1] TRUE</span></span>
 <span id="cb16-15"><a href="#cb16-15"></a><span class="fu">as.logical</span>(<span class="dv">0</span>)</span>
 <span id="cb16-16"><a href="#cb16-16"></a><span class="do">## [1] FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>Notice that any number other than <code>0</code>, when converted to logical, is <code>TRUE</code>. However, when <code>"1"</code> is converted directly from character to logical, the result is <code>NA</code> – meaning “not available” or that it is not possible. However, if the <code>"1"</code> is first converted to a numeric, then converted to logical, the result is <code>TRUE</code>. Any comparison to an <code>NA</code> will be <code>NA</code>.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="cn">NA</span> <span class="sc">==</span> <span class="dv">1</span></span>
 <span id="cb17-2"><a href="#cb17-2"></a><span class="do">## [1] NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <h3 id="exercises">Exercises</h3>
 <p>These exercises are to help you solidify and expand on the information given above. We intentionally added some concepts that were not covered above, and hope that you will take a few minutes to think through what is happening and how R is interpreting the code.</p>
@@ -664,21 +594,16 @@
 <li><p>Like in algebra, parentheses can be used to specify the order of operations. What then would you expect to be the result of the following expressions, knowing the order of operations from exercise 1? (Try to predict the answer before typing the code into R.)</p></li>
 </ol>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">3</span><span class="sc">*</span><span class="dv">3</span></span>
 <span id="cb18-2"><a href="#cb18-2"></a>(<span class="dv">1</span> <span class="sc">+</span> <span class="dv">3</span>)<span class="sc">*</span><span class="dv">3</span></span>
 <span id="cb18-3"><a href="#cb18-3"></a><span class="dv">2</span><span class="sc">^</span><span class="dv">4</span><span class="sc">/</span><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span></span>
 <span id="cb18-4"><a href="#cb18-4"></a><span class="dv">2</span><span class="sc">^</span><span class="dv">4</span><span class="sc">/</span>(<span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span>)</span>
 <span id="cb18-5"><a href="#cb18-5"></a>(<span class="dv">5</span> <span class="sc">+</span> <span class="dv">2</span><span class="sc">*</span><span class="dv">10</span><span class="sc">/</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="dv">4</span>))<span class="sc">/</span><span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <ol start="3" type="1">
 <li>Predict the vector and its class resulting from the following expressions:</li>
 </ol>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
 <span id="cb19-2"><a href="#cb19-2"></a><span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>)</span>
 <span id="cb19-3"><a href="#cb19-3"></a><span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span>
@@ -689,14 +614,11 @@
 <span id="cb19-8"><a href="#cb19-8"></a><span class="fu">as.logical</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">10</span>, <span class="sc">-</span><span class="dv">100</span>))</span>
 <span id="cb19-9"><a href="#cb19-9"></a><span class="fu">as.logical</span>(<span class="fu">c</span>(<span class="st">"TRUE"</span>, <span class="st">"false"</span>, <span class="st">"T"</span>, <span class="st">"F"</span>, <span class="st">"True"</span>, <span class="st">"red"</span>))</span>
 <span id="cb19-10"><a href="#cb19-10"></a><span class="fu">as.numeric</span>(<span class="fu">as.logical</span>(<span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">100</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <ol start="4" type="1">
 <li>Predict the result of the following expressions:</li>
 </ol>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="dv">1</span> <span class="sc">&gt;</span> <span class="dv">3</span></span>
 <span id="cb20-2"><a href="#cb20-2"></a><span class="dv">14</span> <span class="sc">&gt;=</span> <span class="dv">2</span><span class="sc">*</span><span class="dv">7</span></span>
 <span id="cb20-3"><a href="#cb20-3"></a><span class="st">"1"</span> <span class="sc">&gt;</span> <span class="st">"3"</span></span>
@@ -718,7 +640,6 @@
 <span id="cb20-19"><a href="#cb20-19"></a><span class="st">"aaa"</span> <span class="sc">&gt;</span> <span class="st">"aa"</span></span>
 <span id="cb20-20"><a href="#cb20-20"></a><span class="st">"a"</span> <span class="sc">&gt;</span> <span class="st">"A"</span></span>
 <span id="cb20-21"><a href="#cb20-21"></a><span class="fu">as.character</span>(<span class="fu">as.numeric</span>(<span class="cn">TRUE</span>)) <span class="sc">&gt;</span> <span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <div class="footer footer-default">
 
