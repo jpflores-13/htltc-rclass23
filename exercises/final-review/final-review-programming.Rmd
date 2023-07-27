@@ -1,0 +1,33 @@
+---
+title: "final-review-loops-conditionals"
+author: "JP Flores"
+date: "2023-07-27"
+output: html_document
+---
+
+1. Create a function to calculate the area of a circle. Test the function by finding the area of a circle with a diameter of 3.4 cm. Can you use it on a vector of data?
+```{r}
+
+```
+
+
+ 
+
+2. Write a function to convert farenheit to centegrade (oC = (oF - 32) x 5/9). Get your function to print out your result in the following format: “Farenheit : value of oF is equivalent to value oC centigrade.”
+```{r}
+
+```
+
+
+3. Create a vector of normally distributed data, of length 100, mean 35 and standard deviation of 15. Write a function to calculate the mean, median, and range of the vector, print these values out with appropriate labels. Also get the function to plot a histogram (as a proportion) of the values and add a density curve.
+```{r}
+
+```
+
+
+4. Write a function to calculate the median value of a vector of numbers (yes I know there’s a median() function already but this is fun!). Be careful with vectors of an even sample size, as you will have to take the average of the two central numbers (hint: use modulo %%2 to determine whether the vector is an odd or an even size). Test your function on vectors with both odd and even sample sizes.
+
+```{r}
+
+```
+
